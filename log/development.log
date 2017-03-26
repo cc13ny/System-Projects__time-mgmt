@@ -1,0 +1,484 @@
+  [1m[35m (136.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT GET_LOCK('4895551101527799930', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (18.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateTasks (20170326153128)
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` int AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `assignee_id` int, `due_date` datetime, `state` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170326153128')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-03-26 18:11:15', '2017-03-26 18:11:15')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4895551101527799930')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `tasks`[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'tasks'[0m
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:11:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  
+ActionController::RoutingError (uninitialized constant TaskController):
+  
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.2) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `call'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered collection of /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (14.4ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (19.6ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.3ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (244.3ms)
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:12:12 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (28.3ms)
+Completed 200 OK in 8212ms (Views: 8202.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:35:23 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (14.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (88.8ms)
+Completed 200 OK in 390ms (Views: 346.6ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:35:26 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (8.7ms)
+Completed 200 OK in 101ms (Views: 97.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:35:47 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (160.5ms)
+Completed 200 OK in 8385ms (Views: 8153.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:36:27 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (10.9ms)
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-26 14:37:55 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 4.0ms)
+
+
+  
+SyntaxError (/Users/chi/Documents/pj/time-mgmt/app/views/tasks/new.html.slim:3: unterminated string meets end of file
+/Users/chi/Documents/pj/time-mgmt/app/views/tasks/new.html.slim:3: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/tasks/new.html.slim:3: unterminated string meets end of file
+app/views/tasks/new.html.slim:3: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.8ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.9ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (136.4ms)
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-26 14:38:04 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (171.5ms)
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: h1 New Task
+    2: 
+    3: = simple_form_for @user do |f|
+    4:   = f.input :title
+    5:   = f.input :description
+    6:   = f.input :assignee_id
+  
+app/views/tasks/new.html.slim:3:in `_app_views_tasks_new_html_slim__3113668913373983052_70172013623740'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.5ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (131.9ms)
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-26 14:38:29 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (63.7ms)
+Completed 200 OK in 124ms (Views: 120.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-26 14:39:00 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (60.5ms)
+Completed 200 OK in 170ms (Views: 164.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-26 14:39:23 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (65.2ms)
+Completed 200 OK in 135ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-26 14:43:49 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eDZ9x5UBscdD506oaN+iqIr97AfeSt1YC2ra2ufKF+Ep1Jjh/HRZ0CepEfw7HwigcsJzFM/XB3ffNe1RaWSaPg==", "task"=>{"title"=>"File Tax Return", "description"=>"Use different free software to file tax return", "assignee_id"=>"", "due_date(1i)"=>"2016", "due_date(2i)"=>"3", "due_date(3i)"=>"27", "due_date(4i)"=>"20", "due_date(5i)"=>"00", "state"=>""}, "commit"=>"Create Task"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `due_date`, `created_at`, `updated_at`) VALUES ('File Tax Return', 'Use different free software to file tax return', '2016-03-27 20:00:00', '2017-03-26 18:43:49', '2017-03-26 18:43:49')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tasks/1
+Completed 302 Found in 73ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:43:50 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+Completed 406 Not Acceptable in 166ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionController::UnknownFormat (TasksController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.0.2) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.2) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.2) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `call'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.2ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (163.0ms)
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:47:26 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (3.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (62.6ms)
+Completed 200 OK in 318ms (Views: 254.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:48:09 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (15.6ms)
+Completed 200 OK in 135ms (Views: 127.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:48:22 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (31.5ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `state_id' for #<Task:0x007fa45e50f2f8>):
+     8:       td = task.title
+     9:       td = task.description
+    10:       td = task.assignee_id
+    11:       td = task.state_id
+    12:       td = link_to 'show', task_path(task)
+  
+app/views/tasks/index.html.slim:11:in `block in _app_views_tasks_index_html_slim___1272370334608937896_70171969947680'
+app/views/tasks/index.html.slim:6:in `_app_views_tasks_index_html_slim___1272370334608937896_70171969947680'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (107.3ms)
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:48:35 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (30.6ms)
+Completed 200 OK in 98ms (Views: 90.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:48:58 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (23.2ms)
+Completed 200 OK in 106ms (Views: 97.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-26 14:49:29 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (9.5ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:49:36 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (11.9ms)
+Completed 200 OK in 63ms (Views: 58.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:51:24 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (51.1ms)
+Completed 200 OK in 405ms (Views: 384.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:53:29 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (54.3ms)
+Completed 200 OK in 254ms (Views: 196.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:54:09 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (30.8ms)
+Completed 200 OK in 338ms (Views: 333.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:54:22 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (50.1ms)
+Completed 200 OK in 127ms (Views: 119.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:55:31 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (52.7ms)
+Completed 200 OK in 4719ms (Views: 4699.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:56:59 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (52.0ms)
+Completed 200 OK in 4784ms (Views: 4758.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:57:27 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (3.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (16.4ms)
+Completed 200 OK in 71ms (Views: 64.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:58:08 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (77.8ms)
+Completed 200 OK in 5627ms (Views: 5580.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-26 14:58:38 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (17.3ms)
+Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:58:40 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (7.2ms)
+Completed 200 OK in 55ms (Views: 48.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:59:00 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (41.5ms)
+Completed 200 OK in 139ms (Views: 131.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:59:26 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (8.9ms)
+Completed 200 OK in 77ms (Views: 70.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2017-03-26 14:59:36 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (7.1ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.7ms)
+
+
