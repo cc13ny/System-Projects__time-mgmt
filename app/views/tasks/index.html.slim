@@ -1,6 +1,8 @@
 .container
   br
   h1 Listing Tasks
+  h3.float-right = link_to 'New Task', new_task_path
+  br
   br
   table
     tr
@@ -8,11 +10,15 @@
       th Description
       th Assignee
       th State
-      th Link
+      th Show
+      th Edit
+      th Destroy
     - @tasks.each do |task|
       tr
         td = task.title
         td = task.description
         td = task.assignee_id
         td = task.state
-        td = link_to 'show', task_path(task)
+        td = link_to 'Show', task_path(task)
+        td = link_to 'Edit', edit_task_path(task)
+        td = link_to 'Destroy', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }

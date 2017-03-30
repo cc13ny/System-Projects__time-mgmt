@@ -1,0 +1,9 @@
+.container
+  br
+  h1 Editing Task
+  = simple_form_for :task, url: task_path(@task), method: :patch do |f|
+    = f.input :title, required: false
+    = f.input :description, as: :text, required: false, input_html: {rows: 10}
+    = f.button :submit
+  br
+  .float-right = link_to 'Back', tasks_path

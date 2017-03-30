@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to @task
+      redirect_to action: 'index'
     else
       render 'new'
     end

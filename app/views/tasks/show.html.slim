@@ -1,10 +1,14 @@
 .container
   br
-  p
-    strong Title
-    br
+  h3 Title
+  h3 style="text-align: center"
     = @task.title
-  p
-    strong Description
-    br
-    = @task.description
+  br
+  br
+  h3 Description
+  br
+  textarea.form-control rows=10
+   = @task.description
+
+  br
+  .float-right = link_to 'Back', tasks_path
