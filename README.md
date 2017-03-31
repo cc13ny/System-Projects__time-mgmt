@@ -10,7 +10,10 @@ Single node version for personal time management &amp; Distributed version for t
 
 # ToDo
 
-1. Add tinymce
+1. ~Add tinymce~
+2. Make it as a convenient daily tool first
+   + Based on Time
+   + Based on Topic
 
 # Reading
 
