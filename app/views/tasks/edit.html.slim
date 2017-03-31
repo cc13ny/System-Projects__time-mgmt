@@ -3,7 +3,35 @@
   h1 Editing Task
   = simple_form_for :task, url: task_path(@task), method: :patch do |f|
     = f.input :title, required: false
-    = f.input :description, as: :text, required: false, input_html: {rows: 10}
+    = f.input :description, as: :text, required: false, input_html: {class: 'tinymce', rows: 10}
     = f.button :submit
   br
   .float-right = link_to 'Back', tasks_path
+
+//ToDo: DRY
+//ToDo: Coffeescript
+javascript:
+  loadTinyMCE = function (selector) {
+    try {
+      tinymce.remove();
+    } catch (err) {
+    }
+    tinymce.init({
+      selector: selector,
+      //menubar: false,
+      //plugs: 'lists advlist',
+      plugins: "link",
+      //menubar: "insert",
+      //toolbar: "link"
+      statusbar: false,
+      toolbar_items_size: 'small',
+      toolbar: 'undo redo | bold underline italic | bullist numlist | outdent indent | link "',
+      theme: 'modern'
+      //content_style: "body {background: white !important; padding: 15px}",
+      //content_css: "#{asset_path('application.css')}"
+    });
+  };
+
+  $(function () {
+    loadTinyMCE(".tinymce");
+  });

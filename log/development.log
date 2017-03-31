@@ -1910,3 +1910,1060 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-29 21:02:17 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (34.6ms)
+Completed 200 OK in 152ms (Views: 117.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-29 21:02:28 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHAzJtQQ5xHqgNJwqWgTIuxfuAurK8nUnKMnQWKsHP/FKueeQ0TDhXU3Z5Y3xZSw7V5i6VgLsIUlB940mGA4Rg==", "task"=>{"title"=>"吃饭", "description"=>"吃好饭"}, "commit"=>"Create Task"}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('吃饭', '吃好饭', '2017-03-30 01:02:28', '2017-03-30 01:02:28')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 31ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-29 21:02:28 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (25.0ms)
+Completed 200 OK in 190ms (Views: 185.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks/11" for 127.0.0.1 at 2017-03-29 21:02:40 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (10.2ms)
+Completed 200 OK in 78ms (Views: 63.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-29 21:02:46 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (19.4ms)
+Completed 200 OK in 77ms (Views: 63.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:19:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (56.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (10.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (69.7ms)
+Completed 200 OK in 1043ms (Views: 994.1ms | ActiveRecord: 14.7ms)
+
+
+Started DELETE "/tasks/11" for 127.0.0.1 at 2017-03-30 09:19:49 -0400
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z6Fluq4d3kCNyS+ZMq3GdwwbyjNHmOBorPGH80LQ8VArw54twzAV0qqu7PUlbskX5re42w+uSRpCjw9oUUf+rQ==", "id"=>"11"}
+  [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 11 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.2ms)[0m  [1m[31mDELETE FROM `tasks` WHERE `tasks`.`id` = 11[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 29ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:19:49 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (14.4ms)
+Completed 200 OK in 75ms (Views: 70.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/4/edit" for 127.0.0.1 at 2017-03-30 09:19:51 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (164.8ms)
+Completed 200 OK in 251ms (Views: 236.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/tasks/4" for 127.0.0.1 at 2017-03-30 09:20:39 -0400
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EPfjwV66EHZC2yosxvyeZV2bKdap2jWLKWVrZkh4nGe6qSVkBBXLervEBO41gSAs6ydiOdQm/jCGeZBLCCkSig==", "task"=>{"title"=>"[TIME-MGMT] Rich-Editor", "description"=>"Add tinymce to Description field [Be careful about security]"}, "commit"=>"Save Task", "id"=>"4"}
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[33mUPDATE `tasks` SET `description` = 'Add tinymce to Description field [Be careful about security]', `updated_at` = '2017-03-30 13:20:39' WHERE `tasks`.`id` = 4[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks/4
+Completed 302 Found in 25ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/tasks/4" for 127.0.0.1 at 2017-03-30 09:20:39 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (10.8ms)
+Completed 200 OK in 91ms (Views: 83.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:20:42 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (11.7ms)
+Completed 200 OK in 79ms (Views: 67.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/4/edit" for 127.0.0.1 at 2017-03-30 09:21:39 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (34.6ms)
+Completed 200 OK in 159ms (Views: 111.3ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/tasks/4" for 127.0.0.1 at 2017-03-30 09:21:47 -0400
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q+C2eZV6N+pSRHTGeaYeFFQ0YNHdppOogHWdPYuMSZPpvnDcz9Xs5qtbWgSK26Bd4ogrPqBaWBMvaWYQy93Hfg==", "task"=>{"title"=>"[TM] Rich-Editor", "description"=>"Add tinymce to Description field [Be careful about security]"}, "commit"=>"Save Task", "id"=>"4"}
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.0ms)[0m  [1m[33mUPDATE `tasks` SET `title` = '[TM] Rich-Editor', `updated_at` = '2017-03-30 13:21:47' WHERE `tasks`.`id` = 4[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 40ms (ActiveRecord: 20.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:21:47 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (3.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (34.9ms)
+Completed 200 OK in 169ms (Views: 151.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:22:21 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (13.7ms)
+Completed 200 OK in 66ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:22:58 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tVyRebXVLkbgnrm4mQNLft13lyq3hBmMnFay/wvJvOHsBkXBIoEK0n8pDF4Hrszs3HZNyESkYN0l8kuK8QWYWA==", "task"=>{"title"=>"[RD] PGM", "description"=>"Keep Reading & Don't think too much"}, "commit"=>"Create Task"}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[RD] PGM', 'Keep Reading & Don\'t think too much', '2017-03-30 13:22:58', '2017-03-30 13:22:58')[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 51ms (ActiveRecord: 25.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:22:58 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (94.0ms)
+Completed 200 OK in 179ms (Views: 172.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:23:25 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (14.0ms)
+Completed 200 OK in 75ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:24:09 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZNPRcN3uKUNsUYSO4GyARIRm5wJwxAaLmrkJBaWbR/g9iQXISroN1/PmMWh+wQfWhWc94IPkf9ojHfBwX1djQQ==", "task"=>{"title"=>"[RD] Multimodal Learning", "description"=>"Read (https://en.wikipedia.org/wiki/Multimodal_learning), and Think User Case"}, "commit"=>"Create Task"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[RD] Multimodal Learning', 'Read (https://en.wikipedia.org/wiki/Multimodal_learning), and Think User Case', '2017-03-30 13:24:09', '2017-03-30 13:24:09')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 12ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:24:09 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (25.8ms)
+Completed 200 OK in 90ms (Views: 84.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:25:02 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (17.4ms)
+Completed 200 OK in 79ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:25:24 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qPaaTp7+r29GM54x4AW88N01Hv9JDUe590IwjOot4SfxrE72CaqL+9mEK9d+qDti3DTEHbotPuhO5sn5EOHFng==", "task"=>{"title"=>"[RD] Understand Flex", "description"=>"Read (https://www.w3schools.com/cssref/css3_pr_flex.asp)"}, "commit"=>"Create Task"}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.1ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[RD] Understand Flex', 'Read (https://www.w3schools.com/cssref/css3_pr_flex.asp)', '2017-03-30 13:25:24', '2017-03-30 13:25:24')[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 52ms (ActiveRecord: 17.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:25:24 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (54.4ms)
+Completed 200 OK in 126ms (Views: 120.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:26:07 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (16.7ms)
+Completed 200 OK in 88ms (Views: 80.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:27:16 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CWroV6aDBg4JaDpzeU7H1fJxYPsxcK2YUXiKjbTED7NQMDzvMdcimpbfj5Xn40BH83C6GcJQ1Mno3HP4TggrCg==", "task"=>{"title"=>"[TM] Topics or Tags", "description"=>"Add topics or tags to Task for easy search & classification"}, "commit"=>"Create Task"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[TM] Topics or Tags', 'Add topics or tags to Task for easy search & classification', '2017-03-30 13:27:16', '2017-03-30 13:27:16')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:27:16 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (17.9ms)
+Completed 200 OK in 72ms (Views: 66.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:27:24 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (29.3ms)
+Completed 200 OK in 84ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:28:04 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8l6DeTZtv3jcglL/rB+8hrhmLpU3pXWtDA19GbvNn6mrBFfBoTmb7EM15xkysjsUuWf0d8SFDPy1qYRsQQG7EA==", "task"=>{"title"=>"[RD] Distributed Tracing System", "description"=>"Read (https://eng.uber.com/distributed-tracing/)"}, "commit"=>"Create Task"}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[RD] Distributed Tracing System', 'Read (https://eng.uber.com/distributed-tracing/)', '2017-03-30 13:28:04', '2017-03-30 13:28:04')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:28:04 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (22.8ms)
+Completed 200 OK in 83ms (Views: 76.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:28:07 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 61ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:28:50 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Ef9Ju4qnFY3nrqf/Y2UKqMlFpUMBWpGJJviinK0rLatHSmeeX64wqgpD3ljIBO4oiTMd/8lExedPxv/iHiIDw==", "task"=>{"title"=>"[TM] Markdown", "description"=>"Add Markdown option for Description"}, "commit"=>"Create Task"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[TM] Markdown', 'Add Markdown option for Description', '2017-03-30 13:28:50', '2017-03-30 13:28:50')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:28:50 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (40.5ms)
+Completed 200 OK in 122ms (Views: 116.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:28:57 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (16.9ms)
+Completed 200 OK in 160ms (Views: 156.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:29:16 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NDHKDtH6JdsAAwpf5WGJ1SbGtpSjXSWe8ULYMzapGPptax62Rq4BT5+0v7l7zA5HJ8dsdlB9XM9I5iFGzGU8Qw==", "task"=>{"title"=>"[TM] Rethink", "description"=>"Rethink this project in details"}, "commit"=>"Create Task"}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[TM] Rethink', 'Rethink this project in details', '2017-03-30 13:29:16', '2017-03-30 13:29:16')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 14ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:29:16 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (3.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (33.3ms)
+Completed 200 OK in 114ms (Views: 103.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 09:29:31 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (19.3ms)
+Completed 200 OK in 98ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 09:30:14 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mQUawGVOa6EkhzXh0/dmaYsKGINtY1JBfh9yuHLOSv3AX8548hpPNbswgAdNWuH7igvCYZ5DKxDHu4vNiAJuRA==", "task"=>{"title"=>"[TM] Task Dependencies", "description"=>"How to formulate and visualize task dependencies"}, "commit"=>"Create Task"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[TM] Task Dependencies', 'How to formulate and visualize task dependencies', '2017-03-30 13:30:14', '2017-03-30 13:30:14')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 18ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 09:30:14 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (84.6ms)
+Completed 200 OK in 189ms (Views: 181.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 10:07:36 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (65.9ms)
+Completed 200 OK in 208ms (Views: 179.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 10:08:07 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UzK+XWforwOvFuYEUmyju+ogknhBSp36YfMPbTsHZOoKaGrl8LyLlzChU+LMwSQp6yFImrJq5KvYV/YYwctAUw==", "task"=>{"title"=>"[BF] Reimbursement", "description"=>"Finish reim request ASAP"}, "commit"=>"Create Task"}
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[BF] Reimbursement', 'Finish reim request ASAP', '2017-03-30 14:08:07', '2017-03-30 14:08:07')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 54ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 10:08:07 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (8.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (59.0ms)
+Completed 200 OK in 201ms (Views: 170.7ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 10:09:32 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (17.6ms)
+Completed 200 OK in 95ms (Views: 90.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2017-03-30 10:10:02 -0400
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7oGTjLywMG+Zy10MFo2quLNvF0FyhvOsvJQh685ZvMS320c0K+QU+wZ86OqIIC0qsm7No4Gmiv0FMNieNJWYfQ==", "task"=>{"title"=>"[RD] Something Interesting", "description"=>"Read related articles (https://www.forbes.com/sites/robertwood/2016/11/07/irs-forms-1099-are-critical-and-due-early-in-2017/#3510b30e2c5b)"}, "commit"=>"Create Task"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO `tasks` (`title`, `description`, `created_at`, `updated_at`) VALUES ('[RD] Something Interesting', 'Read related articles (https://www.forbes.com/sites/robertwood/2016/11/07/irs-forms-1099-are-critical-and-due-early-in-2017/#3510b30e2c5b)', '2017-03-30 14:10:02', '2017-03-30 14:10:02')[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 14ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 10:10:02 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (45.5ms)
+Completed 200 OK in 178ms (Views: 171.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:25:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (99.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (17.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (73.7ms)
+Completed 200 OK in 1399ms (Views: 1346.4ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 13:25:18 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (161.8ms)
+Completed 200 OK in 251ms (Views: 215.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 13:29:36 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (13.4ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (163.5ms)
+Completed 500 Internal Server Error in 378ms (ActiveRecord: 13.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tinymce' with type 'application/javascript'
+Checked in these paths: 
+  /Users/chi/Documents/pj/time-mgmt/app/assets/config
+  /Users/chi/Documents/pj/time-mgmt/app/assets/images
+  /Users/chi/Documents/pj/time-mgmt/app/assets/javascripts
+  /Users/chi/Documents/pj/time-mgmt/app/assets/stylesheets
+  /Users/chi/Documents/pj/time-mgmt/vendor/assets/javascripts
+  /Users/chi/Documents/pj/time-mgmt/vendor/assets/stylesheets
+  /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actioncable-5.0.2/lib/assets/compiled
+  /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/turbolinks-source-5.0.0/lib/assets/javascripts
+  /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/bootstrap-4.0.0.alpha6/assets/stylesheets
+  /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/bootstrap-4.0.0.alpha6/assets/javascripts):
+    4:     title We're here to manage your time effectively!
+    5:     = csrf_meta_tags
+    6:     = stylesheet_link_tag "application"
+    7:     = javascript_include_tag "application"
+    8:   body
+    9:     = yield
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.slim:7:in `_app_views_layouts_application_html_slim__3528293664569466718_70186386376160'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.8ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (130.8ms)
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 13:32:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (14813.5ms)
+Completed 200 OK in 15221ms (Views: 15174.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:35:29 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (51.2ms)
+Completed 200 OK in 205ms (Views: 175.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 13:36:25 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (60.7ms)
+Completed 200 OK in 140ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:36:33 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (6.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (49.5ms)
+Completed 200 OK in 278ms (Views: 259.6ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:36:35 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (4.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (39.8ms)
+Completed 200 OK in 102ms (Views: 90.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:37:03 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (3.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (87.6ms)
+Completed 200 OK in 537ms (Views: 512.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:37:05 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (28.5ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (45.1ms)
+Completed 200 OK in 142ms (Views: 102.6ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:37:08 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (17.5ms)
+Completed 200 OK in 98ms (Views: 93.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks/12/edit" for 127.0.0.1 at 2017-03-30 13:37:34 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (34.1ms)
+Completed 200 OK in 91ms (Views: 86.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/12/edit" for 127.0.0.1 at 2017-03-30 13:38:50 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (29.7ms)
+Completed 200 OK in 96ms (Views: 89.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:40:26 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (3.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (60.7ms)
+Completed 200 OK in 198ms (Views: 173.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 13:40:29 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (41.3ms)
+Completed 200 OK in 119ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:42:03 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (4.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (87.7ms)
+Completed 200 OK in 224ms (Views: 191.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:42:06 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (33.0ms)
+Completed 200 OK in 90ms (Views: 83.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:55:30 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (13.3ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (80.6ms)
+Completed 200 OK in 233ms (Views: 166.8ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:55:51 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (8.3ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (100.8ms)
+Completed 200 OK in 234ms (Views: 188.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:56:32 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (5.2ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (94.2ms)
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 5.2ms)
+
+
+  
+SyntaxError (/Users/chi/Documents/pj/time-mgmt/app/views/layouts/application.html.slim:12: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/chi/Documents/pj/time-mgmt/app/views/layouts/application.html.slim:14: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/layouts/application.html.slim:12: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.slim:14: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.7ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.2ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (155.2ms)
+Started GET "/tasks/3/edit" for 127.0.0.1 at 2017-03-30 13:57:01 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 3 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (179.8ms)
+Completed 200 OK in 306ms (Views: 291.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:57:07 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (22.9ms)
+Completed 200 OK in 91ms (Views: 84.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/12/edit" for 127.0.0.1 at 2017-03-30 13:57:12 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (35.0ms)
+Completed 200 OK in 107ms (Views: 100.4ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/tasks/12" for 127.0.0.1 at 2017-03-30 13:57:20 -0400
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nNKd/dNGVmOfQbIpBVw8R0X2OEhqXj1KOiRD95xoQBazKzm5Bt9qAOg4x8R973O01OEhw87sVb6quSQ6gpmTfw==", "task"=>{"title"=>"[RD] PGM", "description"=>"<ol>\r\n<li>Keep Reading</li>\r\n<li>Don't think too much</li>\r\n</ol>"}, "commit"=>"Save Task", "id"=>"12"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (30.0ms)[0m  [1m[33mUPDATE `tasks` SET `description` = '<ol>\r\n<li>Keep Reading</li>\r\n<li>Don\'t think too much</li>\r\n</ol>', `updated_at` = '2017-03-30 17:57:20' WHERE `tasks`.`id` = 12[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 72ms (ActiveRecord: 39.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:57:20 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (21.0ms)
+Completed 200 OK in 73ms (Views: 68.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:58:28 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (81.3ms)
+Completed 200 OK in 251ms (Views: 234.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:58:31 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (25.9ms)
+Completed 200 OK in 99ms (Views: 94.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 13:58:48 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.2ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (48.3ms)
+Completed 200 OK in 212ms (Views: 204.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 14:17:50 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (9.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (167.3ms)
+Completed 200 OK in 532ms (Views: 441.1ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 14:18:42 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (9.1ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (96.0ms)
+Completed 200 OK in 404ms (Views: 338.7ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 14:19:52 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (11.8ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (358.2ms)
+Completed 200 OK in 721ms (Views: 655.1ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 14:20:00 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (6.8ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (49.4ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 6.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for nil:NilClass):
+    16:     - @tasks.each do |task|
+    17:       tr
+    18:         td = task.title
+    19:         td = simple_format(@task.description)
+    20:         td = task.assignee_id
+    21:         td = task.state
+    22:         td = link_to 'Show', task_path(task)
+  
+app/views/tasks/index.html.slim:19:in `block in _app_views_tasks_index_html_slim__1407725971764854170_70282119131020'
+app/views/tasks/index.html.slim:16:in `_app_views_tasks_index_html_slim__1407725971764854170_70282119131020'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.2ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (328.8ms)
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 14:20:13 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (66.5ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for nil:NilClass):
+    16:     - @tasks.each do |task|
+    17:       tr
+    18:         td = task.title
+    19:         td = simple_format(@task.description)
+    20:         td = task.assignee_id
+    21:         td = task.state
+    22:         td = link_to 'Show', task_path(task)
+  
+app/views/tasks/index.html.slim:19:in `block in _app_views_tasks_index_html_slim__1407725971764854170_70282059972360'
+app/views/tasks/index.html.slim:16:in `_app_views_tasks_index_html_slim__1407725971764854170_70282059972360'
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.5ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.9ms)
+  Rendering /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/chi/.rbenv/versions/2.2.6/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (129.0ms)
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 14:20:25 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (194.4ms)
+Completed 200 OK in 531ms (Views: 380.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 14:20:31 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (32.8ms)
+Completed 200 OK in 146ms (Views: 138.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks/12/edit" for 127.0.0.1 at 2017-03-30 14:20:35 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (51.3ms)
+Completed 200 OK in 132ms (Views: 117.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 16:00:17 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (13.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (256.5ms)
+Completed 200 OK in 768ms (Views: 655.1ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2017-03-30 16:00:24 -0400
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.slim within layouts/application
+  Rendered tasks/new.html.slim within layouts/application (153.2ms)
+Completed 200 OK in 424ms (Views: 404.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/4" for 127.0.0.1 at 2017-03-30 16:00:29 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (17.4ms)
+Completed 200 OK in 100ms (Views: 91.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:00:33 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (3.1ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (13.9ms)
+Completed 200 OK in 92ms (Views: 84.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/tasks/12/edit" for 127.0.0.1 at 2017-03-30 16:00:38 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (111.3ms)
+Completed 200 OK in 214ms (Views: 207.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:03:27 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (5.1ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (113.7ms)
+Completed 200 OK in 883ms (Views: 829.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:03:29 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (15.2ms)
+Completed 200 OK in 182ms (Views: 176.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:04:36 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (4.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (66.5ms)
+Completed 200 OK in 443ms (Views: 371.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:04:58 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (2.4ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (123.4ms)
+Completed 200 OK in 394ms (Views: 385.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:06:05 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (4.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (104.9ms)
+Completed 200 OK in 498ms (Views: 435.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:11:03 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (4.9ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (124.3ms)
+Completed 200 OK in 439ms (Views: 408.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:11:23 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (3.7ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (58.4ms)
+Completed 200 OK in 207ms (Views: 194.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/tasks/12" for 127.0.0.1 at 2017-03-30 16:27:14 -0400
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (5.5ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 12 LIMIT 1[0m
+  Rendering tasks/show.html.slim within layouts/application
+  Rendered tasks/show.html.slim within layouts/application (141.2ms)
+Completed 200 OK in 478ms (Views: 440.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-30 16:31:46 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (3.0ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (218.1ms)
+Completed 200 OK in 472ms (Views: 418.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:31:56 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (92.3ms)
+Completed 200 OK in 212ms (Views: 194.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:37:11 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (177.5ms)
+Completed 200 OK in 487ms (Views: 432.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:38:39 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (2.2ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (108.4ms)
+Completed 200 OK in 240ms (Views: 213.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:38:59 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (66.3ms)
+Completed 200 OK in 157ms (Views: 149.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:39:27 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (3.2ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (61.9ms)
+Completed 200 OK in 367ms (Views: 358.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:39:39 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (35.8ms)
+Completed 200 OK in 152ms (Views: 146.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:39:47 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (25.6ms)
+Completed 200 OK in 111ms (Views: 106.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 16:39:49 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (32.4ms)
+Completed 200 OK in 95ms (Views: 91.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2017-03-30 17:06:34 -0400
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KWghyeoBOl2jvtFTik8GdftPIp/uY2fm5Azp6VT7Q0PNCtpehyzxz4TZEj+djAkVEeNQd6ZVzpQKcmFyR2xMvg==", "task"=>{"title"=>"File Tax Return", "description"=>"<ol>\r\n<li><a href=\"https://www.nyu.edu/students/student-information-and-resources/student-visa-and-immigration/current-students/employment-and-tax/tax.html\" target=\"_blank\">NYU Tax Software</a></li>\r\n<li><a href=\"https://www.irs.gov/individuals/international-taxpayers/who-must-file\">1042-S</a></li>\r\n<li><a href=\"https://www.turbotax.com/lp/ty16/ppc/temp_2.htm?znA=kmax&amp;znTL=w2az&amp;znTR=fdf&amp;znC3=social-carousel&amp;srqs=null&amp;cid=ppc_gg_nb_stan_all_na_File-Tax-Return_ty16-bu14-sb60&amp;srid=COm126Cn_tICFVecNwodOFIA3w&amp;targetid=kwd-121168835&amp;skw=file%20tax%20return&amp;adid=186596171687&amp;ven=gg&amp;gclid=COm126Cn_tICFVecNwodOFIA3w&amp;gclsrc=ds\">Turbotax</a></li>\r\n</ol>"}, "commit"=>"Save Task", "id"=>"1"}
+  [1m[36mTask Load (5.4ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.3ms)[0m  [1m[33mUPDATE `tasks` SET `description` = '<ol>\r\n<li><a href=\"https://www.nyu.edu/students/student-information-and-resources/student-visa-and-immigration/current-students/employment-and-tax/tax.html\" target=\"_blank\">NYU Tax Software</a></li>\r\n<li><a href=\"https://www.irs.gov/individuals/international-taxpayers/who-must-file\">1042-S</a></li>\r\n<li><a href=\"https://www.turbotax.com/lp/ty16/ppc/temp_2.htm?znA=kmax&amp;znTL=w2az&amp;znTR=fdf&amp;znC3=social-carousel&amp;srqs=null&amp;cid=ppc_gg_nb_stan_all_na_File-Tax-Return_ty16-bu14-sb60&amp;srid=COm126Cn_tICFVecNwodOFIA3w&amp;targetid=kwd-121168835&amp;skw=file%20tax%20return&amp;adid=186596171687&amp;ven=gg&amp;gclid=COm126Cn_tICFVecNwodOFIA3w&amp;gclsrc=ds\">Turbotax</a></li>\r\n</ol>', `updated_at` = '2017-03-30 21:06:35' WHERE `tasks`.`id` = 1[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 253ms (ActiveRecord: 30.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 17:06:35 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (2.5ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (159.8ms)
+Completed 200 OK in 368ms (Views: 341.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tasks/4/edit" for 127.0.0.1 at 2017-03-30 17:10:06 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (5.9ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (197.5ms)
+Completed 200 OK in 448ms (Views: 344.2ms | ActiveRecord: 5.9ms)
+
+
+Started PATCH "/tasks/4" for 127.0.0.1 at 2017-03-30 17:10:16 -0400
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CgZL6UhbGZMiGPRtSzHzJaUKP7fnoTFs9n1X5mvC4n2gWI1MEvTCn9sH2q+4TE1sE7Z0WJpd+tdZYazLK5NskA==", "task"=>{"title"=>"[TM] Rich-Editor", "description"=>"<ol>\r\n<li>Add tinymce to Description field</li>\r\n<li>Be careful about security</li>\r\n</ol>"}, "commit"=>"Save Task", "id"=>"4"}
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.1ms)[0m  [1m[33mUPDATE `tasks` SET `description` = '<ol>\r\n<li>Add tinymce to Description field</li>\r\n<li>Be careful about security</li>\r\n</ol>', `updated_at` = '2017-03-30 21:10:16' WHERE `tasks`.`id` = 4[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 38ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 17:10:16 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (5.9ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (63.0ms)
+Completed 200 OK in 137ms (Views: 126.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-30 18:03:28 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (15.3ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (469.8ms)
+Completed 200 OK in 1334ms (Views: 1112.4ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2017-03-30 20:43:14 -0400
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (79.4ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  Rendering tasks/edit.html.slim within layouts/application
+  Rendered tasks/edit.html.slim within layouts/application (462.0ms)
+Completed 200 OK in 959ms (Views: 724.1ms | ActiveRecord: 79.4ms)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2017-03-30 20:47:34 -0400
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sSq+U5tbEJwJu2/Ff2FEpg4UBhby0/KGVOhnP+3TxnI9feubODBnhjWD5YxZk3RRumE5ENXXQB1/VAHYIHsoYg==", "task"=>{"title"=>"File Tax Return", "description"=>"<ol>\r\n<li><a href=\"https://www.nyu.edu/students/student-information-and-resources/student-visa-and-immigration/current-students/employment-and-tax/tax.html\" target=\"_blank\">NYU Tax Software</a></li>\r\n<li><a href=\"https://www.irs.gov/individuals/international-taxpayers/who-must-file\" target=\"_blank\">1042-S</a></li>\r\n<li><a href=\"https://www.turbotax.com/lp/ty16/ppc/temp_2.htm?znA=kmax&amp;znTL=w2az&amp;znTR=fdf&amp;znC3=social-carousel&amp;srqs=null&amp;cid=ppc_gg_nb_stan_all_na_File-Tax-Return_ty16-bu14-sb60&amp;srid=COm126Cn_tICFVecNwodOFIA3w&amp;targetid=kwd-121168835&amp;skw=file%20tax%20return&amp;adid=186596171687&amp;ven=gg&amp;gclid=COm126Cn_tICFVecNwodOFIA3w&amp;gclsrc=ds\" target=\"_blank\">Turbotax</a></li>\r\n<li><a href=\"https://www.efile.com/tax-day-deadlines/#late-return\" target=\"_blank\">Efile</a></li>\r\n<li><a href=\"https://www.irs.gov/pub/irs-pdf/i1099msc.pdf\">2017 Instructions for Form 1099-MISC</a></li>\r\n</ol>"}, "commit"=>"Save Task", "id"=>"1"}
+  [1m[36mTask Load (6.8ms)[0m  [1m[34mSELECT  `tasks`.* FROM `tasks` WHERE `tasks`.`id` = 1 LIMIT 1[0m
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (50.6ms)[0m  [1m[33mUPDATE `tasks` SET `description` = '<ol>\r\n<li><a href=\"https://www.nyu.edu/students/student-information-and-resources/student-visa-and-immigration/current-students/employment-and-tax/tax.html\" target=\"_blank\">NYU Tax Software</a></li>\r\n<li><a href=\"https://www.irs.gov/individuals/international-taxpayers/who-must-file\" target=\"_blank\">1042-S</a></li>\r\n<li><a href=\"https://www.turbotax.com/lp/ty16/ppc/temp_2.htm?znA=kmax&amp;znTL=w2az&amp;znTR=fdf&amp;znC3=social-carousel&amp;srqs=null&amp;cid=ppc_gg_nb_stan_all_na_File-Tax-Return_ty16-bu14-sb60&amp;srid=COm126Cn_tICFVecNwodOFIA3w&amp;targetid=kwd-121168835&amp;skw=file%20tax%20return&amp;adid=186596171687&amp;ven=gg&amp;gclid=COm126Cn_tICFVecNwodOFIA3w&amp;gclsrc=ds\" target=\"_blank\">Turbotax</a></li>\r\n<li><a href=\"https://www.efile.com/tax-day-deadlines/#late-return\" target=\"_blank\">Efile</a></li>\r\n<li><a href=\"https://www.irs.gov/pub/irs-pdf/i1099msc.pdf\">2017 Instructions for Form 1099-MISC</a></li>\r\n</ol>', `updated_at` = '2017-03-31 00:47:34' WHERE `tasks`.`id` = 1[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://dev.culinaryagents.com:3001/tasks
+Completed 302 Found in 169ms (ActiveRecord: 75.2ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2017-03-30 20:47:35 -0400
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.slim within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  Rendered tasks/index.html.slim within layouts/application (188.1ms)
+Completed 200 OK in 428ms (Views: 414.2ms | ActiveRecord: 0.7ms)
+
+
