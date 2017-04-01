@@ -12,8 +12,8 @@ Single node version for personal time management &amp; Distributed version for t
 
 1. Security on rich-editor
 2. Make it as a convenient daily tool first
-   + Based on Time
-   + Based on Topic
+   + Based on Time （Resource)
+   + Based on Topic (Planning)
 3. *Formulate Task Dependencies*, Graph Algo
 
 # Reading
