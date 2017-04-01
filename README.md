@@ -15,6 +15,7 @@ Single node version for personal time management &amp; Distributed version for t
    + Based on Time （Resource)
    + Based on Topic (Planning)
 3. *Formulate Task Dependencies*, Graph Algo
+4. __Topic Distribution__ for _a range of time_
 
 # Reading
 
