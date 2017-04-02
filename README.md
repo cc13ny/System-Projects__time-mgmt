@@ -1,6 +1,14 @@
 # time-mgmt
 Single node version for personal time management &amp; Distributed version for team project management
 
+<p align="center">
+  <img src="http://leoncom.org/wp-content/uploads/TraceInfrastructure_12137/image.png" width="400px"/>
+</p>
+
+<p align="center">
+  <em>Task Dependencies / Credit to Google Dapper Paper</em>
+</p>
+
 # Initial Plan (Single Node Version)
 
 1. Think an individual as a CPU
