@@ -24,6 +24,11 @@ Single node version for personal time management &amp; Distributed version for t
    + Based on Topic (Planning)
 3. *Formulate Task Dependencies*, Graph Algo
 4. __Topic Distribution__ for _a range of time_
+5. _Three Key Ideas_
+   + Left Dropdown (Topics, title dropdown) + Middle (optional, Titles) + Right Full text (Description)
+   + Automatic Classification/Clustering (with/without checked topices) for each new Task
+   + Ranking: Different Views centered around different tasks or objects or topics
+6. Core: Node, Edge, View
 
 # Reading
 
