@@ -28,6 +28,8 @@ Single node version for personal time management &amp; Distributed version for t
    + Left Dropdown (Topics, title dropdown) + Middle (optional, Titles) + Right Full text (Description)
    + Automatic Classification/Clustering (with/without checked topices) for each new Task
    + Ranking: Different Views centered around different tasks or objects or topics
+     + [Word Cloud](https://github.com/amueller/word_cloud) centered at different topics (3D, 360dgr)
+     + [Top-Down](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiYo_T3qIvTAhXFKyYKHcL-CLAQjRwIBw&url=http%3A%2F%2Fblog.vjeux.com%2F2015%2Fjavascript%2Fdirty-up-and-execute-top-down.html&psig=AFQjCNF7aRltmJC8XoCBPyEL2cm0aNKIZQ&ust=1491413094560630) rooted at different topics
 6. Core: Node, Edge, View
 
 # Reading
