@@ -1,13 +1,9 @@
 .container
   br
-  h3 Title
-  h3.text-center
-    = @task.title
-  br
-  br
   .card
     .card-block
-      h3.card-title.text-center Description
+      h3.card-title.text-center = @task.title
+      br
       p.card-text = raw(@task.description)
   br
   .float-right = link_to 'Back', tasks_path
