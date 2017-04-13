@@ -29,7 +29,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update(task_params)
-      redirect_to @task
+      redirect_to action: 'index'
     else
       render 'edit'
     end
