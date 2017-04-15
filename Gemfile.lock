@@ -118,6 +118,9 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redis (3.3.2)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -200,6 +203,8 @@ DEPENDENCIES
   mysql2
   puma (~> 3.0)
   rails (~> 5.0.2)
+  redis
+  redis-namespace
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   simple_form
