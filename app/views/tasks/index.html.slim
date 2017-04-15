@@ -1,11 +1,17 @@
 .container
   br
+  br
+  - img_adrs= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM90mW4Yvpk-c_A9s_wM3WroAmM4tSY4DSWthM4e7AUYS8VOfk"
+  img src=img_adrs width="336"
+  br
+  br
   h1 Listing Tasks
   h3.float-right = link_to 'New Task', new_task_path
   br
   br
   table
     tr
+      th Draggable
       th Title
       th Description
       th Assignee
@@ -14,7 +20,9 @@
       th Edit
       th Destroy
     - @tasks.each do |task|
+      - task_id = "task-" + task.id.to_s
       tr
+        td id=task_id ondrop="dropStart(event)" ondragover="dropOver(event)" draggable="true" ondragstart="dragStart(event)" = task.id
         td = task.title
         td = raw(task.description)
         td = task.assignee_id
@@ -22,3 +30,23 @@
         td = link_to 'Show', task_path(task)
         td = link_to 'Edit', edit_task_path(task)
         td = link_to 'Destroy', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }
+
+javascript:
+  dropStart = function (ev) {
+    ev.preventDefault();
+    var curr_task = ev.target.parentNode;
+    var prev_task = document.getElementById(ev.dataTransfer.getData("id")).parentNode;
+
+
+    var tmp = curr_task.innerHTML;
+    curr_task.innerHTML = prev_task.innerHTML;
+    prev_task.innerHTML = tmp;
+  };
+
+  dropOver = function (ev) {
+    ev.preventDefault();
+  };
+
+  dragStart = function (ev) {
+    ev.dataTransfer.setData("id", ev.target.id);
+  };
