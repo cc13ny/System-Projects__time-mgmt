@@ -25,6 +25,16 @@ class TasksController < ApplicationController
     end
   end
 
+  def sup_tasks
+    @task = Task.find(params[:id])
+    @suptasks = @task.sup_tasks
+  end
+
+  def sub_tasks
+    @task = Task.find(params[:id])
+    @subtasks = @task.sub_tasks
+  end
+
   def update
     @task = Task.find(params[:id])
 

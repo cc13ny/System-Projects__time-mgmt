@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326153128) do
+ActiveRecord::Schema.define(version: 20170717152710) do
+
+  create_table "task_dependencies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "sup_task_id"
+    t.integer  "sub_task_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["sub_task_id"], name: "index_task_dependencies_on_sub_task_id", using: :btree
+    t.index ["sup_task_id"], name: "index_task_dependencies_on_sup_task_id", using: :btree
+  end
 
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
