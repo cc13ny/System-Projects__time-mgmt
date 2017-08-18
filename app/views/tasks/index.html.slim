@@ -1,3 +1,18 @@
+css:
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  .active {
+    background-color: lightcoral;
+  }
+
+  .desc {
+    background-color: black;
+    color: white;
+  }
 .container
   br
   br
@@ -6,47 +21,176 @@
   br
   br
   h1 Listing Tasks
-  h3.float-right = link_to 'New Task', new_task_path
+  .float-right = link_to 'New Task', new_task_path
   br
   br
-  table
-    tr
-      th Draggable
-      th Title
-      th Description
-      th Assignee
-      th State
-      th Show
-      th Edit
-      th Destroy
-    - @tasks.each do |task|
-      - task_id = "task-" + task.id.to_s
+
+  /.col-sm-12
+  /  table
+  /    tr
+  /      th ID
+  /      th Title
+  /      th Description
+  /      th Sup Tasks
+  /      th Sub Tasks
+  /      th Show
+  /      th Edit
+  /      th Destroy
+  /    - @tasks.each do |task|
+  /      tr
+  /        td = task.id
+  /        td = task.title
+  /        td = raw(task.description)
+  /        td = link_to 'Sup', sup_tasks_task_path(task)
+  /        td = link_to 'Sub', sub_tasks_task_path(task)
+  /        td = link_to 'Show', task_path(task)
+  /        td = link_to 'Edit', edit_task_path(task)
+  /        td = link_to 'Destroy', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }
+  .col-sm-4.float-left
+    table
       tr
-        td id=task_id ondrop="dropStart(event)" ondragover="dropOver(event)" draggable="true" ondragstart="dragStart(event)" = task.id
-        td = task.title
-        td = raw(task.description)
-        td = task.assignee_id
-        td = task.state
-        td = link_to 'Show', task_path(task)
-        td = link_to 'Edit', edit_task_path(task)
-        td = link_to 'Destroy', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }
+        th ID
+        th Title
+      - @tasks.each do |task|
+        - title_id = "js-task-title-#{task.id}"
+        tr
+          td = task.id
+          td.js-task-title id=(title_id) = task.title
+  .col-sm-8.float-right
+    - @tasks.each do |task|
+      - desc_id = "js-task-desc-#{task.id}"
+      .card.hidden-xl-down.desc id=(desc_id)
+        .card-block
+          h4.card-title = task.title
+          p.card-text = raw(task.description)
+
+      /javascript:
+      //  prev_task_id = -1;
+      //  $("#js-task-title-#{task.id}").mouseover(function () {
+      //    if (prev_task_id > -1) {
+      //      $("#js-task-desc-" + prev_task_id).addClass('hidden-xl-down');
+      //    }
+      //    var curr_task_id = $(this).attr('id').substring('js-task-title-'.length);
+      //    var desc_id = "#js-task-desc-" + curr_task_id;
+      //    $(desc_id).removeClass('hidden-xl-down');
+      //    prev_task_id = curr_task_id;
+      //  });
 
 javascript:
-  dropStart = function (ev) {
-    ev.preventDefault();
-    var curr_task = ev.target.parentNode;
-    var prev_task = document.getElementById(ev.dataTransfer.getData("id")).parentNode;
+  prev_task_id = -1;
+  $(".js-task-title").mouseover(function () {
+
+    // Previous Task
+    if (prev_task_id > -1) {
+      // title
+      $("#js-task-title-" + prev_task_id).removeClass('active');
+
+      // desc
+      $("#js-task-desc-" + prev_task_id).addClass('hidden-xl-down');
+    }
+
+    // Current Task
+    var curr_task_id = $(this).attr('id').substring('js-task-title-'.length);
+
+    // title
+    $("#js-task-title-" + curr_task_id).addClass('active');
+
+    // desc
+    $("#js-task-desc-" + curr_task_id).removeClass('hidden-xl-down');
+
+    // Update Previous Task ID
+    prev_task_id = curr_task_id;
+  });
 
 
-    var tmp = curr_task.innerHTML;
-    curr_task.innerHTML = prev_task.innerHTML;
-    prev_task.innerHTML = tmp;
-  };
+/= javascript_include_tag 'jquery-ui-custom-sortable'
+/= javascript_include_tag 'jquery.ui.touch-punch.min'
+/
+/.container
+/  br
+/  br
+/  - img_adrs= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM90mW4Yvpk-c_A9s_wM3WroAmM4tSY4DSWthM4e7AUYS8VOfk"
+/  img src=img_adrs width="336"
+/  br
+/  br
+/  h1 Listing Tasks
+/  h3.float-right = link_to 'New Task', new_task_path
+/  br
+/  br
+/
+/  ul#sortable
+/    - @tasks.each do |task|
+/      - task_id = "task-" + task.id.to_s
+/      li.panel
+/        = task.id
+/        = task.title
+/        = raw(task.description)
+/        = task.assignee_id
+/        = task.state
+/        = link_to 'Show', task_path(task)
+/        = link_to 'Edit', edit_task_path(task)
+/        = link_to 'Destroy', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }
+/
+/  /ul#sortable
+/  /  - @tasks.each do |task|
+/  /    - task_id = "task-" + task.id.to_s
+/  /    li.row
+/  /      .panel
+/  /        span.ui-icon.ui-icon-arrowthick-2-n-s
+/  /        strong = task.title
+/
+/  /ul#sortable
+/  /  li.ui-state-default
+/  /    span.ui-icon.ui-icon-arrowthick-2-n-s
+/  /    = "Item 1"
+/  /  li.ui-state-default
+/  /    span.ui-icon.ui-icon-arrowthick-2-n-s
+/  /    = "Item 2"
+/  /  li.ui-state-default
+/  /    span.ui-icon.ui-icon-arrowthick-2-n-s
+/  /    = "Item 3"
+/  /  li.ui-state-default
+/  /    span.ui-icon.ui-icon-arrowthick-2-n-s
+/  /    = "Item 4"
+/
+/    /tr
+/    /  th Draggable
+/    /  th Title
+/    /  th Description
+/    /  th Assignee
+/    /  th State
+/    /  th Show
+/    /  th Edit
+/    /  th Destroy
+/
+/
+/
+/
+//javascript:
+//  $(function () {
+//    $("#sortable").sortable();
+//    $("#sortable").disableSelection();
+//  });
 
-  dropOver = function (ev) {
-    ev.preventDefault();
-  };
-
-  dragStart = function (ev) {
-    ev.dataTransfer.setData("id", ev.target.id);
-  };
+/
+/  /table
+/  /  tr
+/  /    th Draggable
+/  /    th Title
+/  /    th Description
+/  /    th Assignee
+/  /    th State
+/  /    th Show
+/  /    th Edit
+/  /    th Destroy
+/  /  - @tasks.each do |task|
+/  /    - task_id = "task-" + task.id.to_s
+/  /    tr.panel.panel-default
+/  /      td id=task_id ondrop="dropStart(event)" ondragover="dropOver(event)" draggable="true" ondragstart="dragStart(event)" = task.id
+/  /      td = task.title
+/  /      td = raw(task.description)
+/  /      td = task.assignee_id
+/  /      td = task.state
+/  /      td = link_to 'Show', task_path(task)
+/  /      td = link_to 'Edit', edit_task_path(task)
+/  /      td = link_to 'Destroy', task_path(task), method: :delete, data: { confirm: 'Are you sure?' }
